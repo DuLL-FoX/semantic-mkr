@@ -1,0 +1,35 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+
+SELECT ?region ?population
+WHERE {
+  VALUES ?region {
+    dbr:Rivne_Province
+    dbr:Vinnytsia_Province
+    dbr:Volyn_Province
+    dbr:Mykolaiv_Province
+    dbr:Luhan_Province
+    dbr:Lviv_Province
+    dbr:Zakarpattia_Oblast
+    dbr:Zaporizhzhia_Oblast
+    dbr:Zhytomyr_Province
+    dbr:Ivano-Frankivsk_Province
+    dbr:Ternopil_Province
+    dbr:Cherkasy_Oblast
+    dbr:Chernihiv_Oblast
+    dbr:Chernivtsi_Oblast
+    dbr:Kharkiv_Oblast
+    dbr:Kherson_Province
+    dbr:Khmelnytskyi_Province
+    dbr:Sumy_Province
+    dbr:Dnipropetrovsk_Oblast
+    dbr:Donetsk_Oblast
+    dbr:Poltava_Oblast
+    dbr:Kirovohrad_Oblast
+    dbr:Kyiv_Oblast
+    dbr:Odessa_Oblast
+  }
+  ?region dbo:populationTotal ?population.
+}
+ORDER BY DESC(?population)
+LIMIT 1
